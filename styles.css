@@ -1,0 +1,22 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0px auto;
+}
+.span4 {
+	display: inline-block;
+	width: 33%;
+	text-align: center;
+}
+
+.mb20 {
+	margin-bottom: 20px;
+}
+
+.muted {
+	display: inline;
+}
