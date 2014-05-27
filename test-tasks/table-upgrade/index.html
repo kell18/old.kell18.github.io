@@ -1,14 +1,14 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>TableUpgrade</title>
+	<title>Тестовое задание</title>
 	<link rel="stylesheet" href="styles/main-styles.css">
 </head>
 <body>
 
 <h1 class="text-center">Тестовое задание Бикеев Альберт</h1>
 
-<table id="sortable-table" class="mrg-auto" border="1" cellspacing="0" cellpadding="3">
+<table id="sortable-table">
 	<thead>
 		<tr>
 			<th data-col-type="alphabetic">Alphabetic </th>
@@ -59,17 +59,19 @@
 		<tr>
 			<td data-aggregate="COUNT">Количество: </td>
 			<td data-aggregate="SUM">Сумма: </td>
-			<td data-aggregate="MAX_DATE">Последняя дата: </td>
+			<td data-aggregate="LAST_DATE">Последняя дата: </td>
 			<td data-aggregate="COUNT">Количество: </td>
 		</tr>
 	</tfoot>
 </table>
 
-<script type="text/javascript" src="http://stevenlevithan.com/assets/misc/date.format.js"></script>
+<script type="text/javascript" src="libs/date-format/date.format.js"></script>
 <script type="text/javascript" src="scripts/TableUpgrade.js"></script>
+
 <script type="text/javascript">
 	// Example of configurating
 	TableUpgrade.options.DATA_TYPE = 'data-col-type';
+
 	// Applying sorter to table
 	var sorter = TableUpgrade.applyTo('#sortable-table');
 </script>

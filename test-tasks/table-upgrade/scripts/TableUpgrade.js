@@ -5,21 +5,49 @@
  * @author Albert Bikeev
  * @module TableUpgrade
  */
-var TableUpgrade = (function () {
+var TableUpgrade = (function (dateFormat) {
 	var _lastSortedCol = document.createElement('TH'), o;
 
 	Construct.options = o = {
+		/**
+		 * Event on TH tag which starts sorting col
+		 * @type {String}
+		 */
 		SORT_EVENT: 'click',
+		/**
+		 * Class added to each TD or TH tag in col
+		 * @type {String}
+		 */
 		SORT_CLASS: 'sorted-col-data',
+		/**
+		 * Class added to TH tag in col sorted by asc order
+		 * @type {String}
+		 */
 		ASC_SORT_CLASS: 'col-sorted-asc',
+		/**
+		 * Class added to TH tag in col sorted by desc order
+		 * @type {String}
+		 */
 		DESC_SORT_CLASS: 'col-sorted-desc',
+		/**
+		 * Data-attribute for marking col types (use in TH tag)
+		 * @type {String}
+		 */
 		DATA_TYPE: 'data-type', 
+		/**
+		 * Internal data-attribute for remember order of sort
+		 * @type {String}
+		 */
 		DATA_ORDER: 'data-order',
+		/**
+		 * Data-attribute for marking col aggregate func (use in tFoot secion)
+		 * @type {String}
+		 */
 		DATA_AGGREGATE: 'data-aggregate'
-	}
+	};
 
 	/**
-	 * @param {HTMLTable} table
+	 * @param {HTMLTableElement} table
 	 */
 	function Construct(table) {
 		this.table = window.table = table;
@@ -33,8 +61,8 @@ var TableUpgrade = (function () {
 
 	/**
 	 * Apply TableUpgrade to finded table
-	 * @param  {string} selector
-	 * @return {TableUpgrade} Instance
+	 * @param  {string} selector Of table
+	 * @return {Construct} Instance
 	 */
 	Construct.applyTo = function (selector) {
 		var table = document.querySelector(selector);
@@ -46,8 +74,9 @@ var TableUpgrade = (function () {
 
 	/**
 	 * Sort rows in table in order of sorted column
-	 * @param  {number} ind  Index of sorted column
-	 * @param  {Construct.ComparingFuncs} type Type of column
+	 * @param {number} ind  Index of sorted column
+	 * @param {String} type Type of column
+     * @param {number} order Of sort
 	 */
 	Construct.prototype.sortCol = function (ind, type, order) {
 		var rows = this.getRowsArr();
@@ -76,7 +105,7 @@ var TableUpgrade = (function () {
 	Construct.prototype.computeAggregateRow = function () {
 		var cells, type, aggrResult;
 		if (this.tFoot == null) { return false; }
-		cells = this.tFoot.querySelectorAll('td['+o.DATA_AGGREGATE+']')
+		cells = this.tFoot.querySelectorAll('td['+o.DATA_AGGREGATE+']');
 		for (var i = 0, cell; cell = cells[i]; i++) {
 			type = cell.getAttribute(o.DATA_AGGREGATE);
 			aggrResult = Construct.AggregateFuncs[type](cell.cellIndex, this.tBody);
@@ -93,17 +122,16 @@ var TableUpgrade = (function () {
 			var e = event || window.event,
 				target = e.target,
 				type = target.getAttribute(o.DATA_TYPE),
-				order = target.getAttribute(o.DATA_ORDER);
+				order = (target.getAttribute(o.DATA_ORDER) || -1)*1;
 
 			if (target.tagName = 'TH' && type != null) {
-				var order = (order || -1)*1;
 				self.SetColSeletion(target, order, target.cellIndex);
 				self.sortCol(target.cellIndex, type, order);
 				target.setAttribute(o.DATA_ORDER, order === 1 ? -1 : 1);
 			}
 		});
 		// Cancel selecting of thead
-		this.tHead.onselectstart = function (event) { return false; };
+		this.tHead.onselectstart = function () { return false; };
 	};
 
 	Construct.prototype.SetColSeletion = function (target, order, ind) {
@@ -116,7 +144,7 @@ var TableUpgrade = (function () {
 			row.cells[ind].classList.add(o.SORT_CLASS);
 		}
 		_lastSortedCol = target;
-	}
+	};
 
 	/**
 	 * Functions for colums sorting.
@@ -127,9 +155,8 @@ var TableUpgrade = (function () {
 		 * Return comparing function by type 
 		 * with binded necessary data in scope.
 		 * @param  {number}  ind    Index of column
-		 * @param  {string}  type   one of column types: 
-		 * <b>alphabetic, numeric, date, unsortable
-		 * @param  {Boolean} order Order of sort
+		 * @param  {String}  type   one of column types: <i>alphabetic, numeric, date</i>
+		 * @param  {number} order Order of sort
 		 * @return {function} binded by params comparing function     
 		 */
 		getFunc: function (ind, type, order) {
@@ -146,7 +173,7 @@ var TableUpgrade = (function () {
 			for (var i = 0, len = str1.length; i < len; i++) {
                 if (str1.charAt(i) > str2.charAt(i)) {
                     return this.order;
-                } else {
+                } else if (str1.charAt(i) < str2.charAt(i)) {
                     return -this.order;
                 }
             }
@@ -175,9 +202,7 @@ var TableUpgrade = (function () {
 			} else {
 				return 0;
 			}
-		},
-
-		undefined: function (row1, row2) {}
+		}
 	};
 
 	/**
@@ -189,7 +214,7 @@ var TableUpgrade = (function () {
 			var sum = 0, val;
 			for (var i = 0, row; row = tBody.rows[i]; i++) {
 				val = row.cells[ind] != null && row.cells[ind].innerText*1;
-				if (val != NaN) {
+				if (!isNaN(val)) {
 					sum += val;
 				}
 			}
@@ -204,20 +229,20 @@ var TableUpgrade = (function () {
 			return cnt;
 		},
 
-		MAX_DATE: function (ind, tBody) {
-			var max = 0, curr, val, pattern;
+        LAST_DATE: function (ind, tBody) {
+			var max, curr, val, pattern;
 			for (var i = 0, row; row = tBody.rows[i]; i++) {
 				val = row.cells[ind] != null && row.cells[ind].innerText;
 				curr = new Date(val);
-				if (max < curr || max === 0) {
+				if (max < curr || max == null) {
 					max = curr;
 					pattern = val;
 				}
 			}
-			return (new Date(max)).format(pattern);
+			return dateFormat(new Date(max), pattern);
 		}
 	};
 
-
 	return Construct;
-})();
+
+})(dateFormat);
