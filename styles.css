@@ -1,22 +1,26 @@
-* {
-	padding: 0;
-	margin: 0;
-}
-
-.container {
-	max-width: 1200px;
-	margin: 0px auto;
-}
-.span4 {
-	display: inline-block;
-	width: 33%;
-	text-align: center;
-}
-
 .mb20 {
 	margin-bottom: 20px;
 }
 
-.muted {
-	display: inline;
+.name {
+	font: bold 18pt sans-serif; 
+}
+
+.data-row div:first-child {
+	text-align: left;
+	vertical-align: middle;
+}
+
+.data-row div:nth-child(2) {
+	text-align: center;
+}
+
+.data-row div:last-child {
+	text-align: right;
+}
+
+.title {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid rgb(238, 238, 238);
 }
