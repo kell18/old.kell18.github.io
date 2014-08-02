@@ -125,7 +125,7 @@ var TableUpgrade = (function (dateFormat) {
 				order = (target.getAttribute(o.DATA_ORDER) || -1)*1;
 
 			if (target.tagName = 'TH' && type != null) {
-				self.SetColSeletion(target, order, target.cellIndex);
+				self.setColSeletion(target, order, target.cellIndex);
 				self.sortCol(target.cellIndex, type, order);
 				target.setAttribute(o.DATA_ORDER, order === 1 ? -1 : 1);
 			}
@@ -134,7 +134,7 @@ var TableUpgrade = (function (dateFormat) {
 		this.tHead.onselectstart = function () { return false; };
 	};
 
-	Construct.prototype.SetColSeletion = function (target, order, ind) {
+	Construct.prototype.setColSeletion = function (target, order, ind) {
 		var lastInd = _lastSortedCol.cellIndex;
 		_lastSortedCol.classList.remove(o.ASC_SORT_CLASS, o.DESC_SORT_CLASS);
 		target.classList.toggle(o.ASC_SORT_CLASS, order === 1);
@@ -153,9 +153,9 @@ var TableUpgrade = (function (dateFormat) {
 	Construct.ComparingFuncs = {
 		/**
 		 * Return comparing function by type 
-		 * with binded necessary data in scope.
-		 * @param  {number}  ind    Index of column
-		 * @param  {String}  type   one of column types: <i>alphabetic, numeric, date</i>
+		 * with necessary data binded in scope.
+		 * @param  {number} ind Index of column
+		 * @param  {String} type one of column types: <i>alphabetic, numeric, date</i>
 		 * @param  {number} order Order of sort
 		 * @return {function} binded by params comparing function     
 		 */

@@ -1,5 +1,18 @@
+
+.container {
+	margin-top: 20px;
+}
+
 .mb20 {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+}
+
+.mb40 {
+	margin-bottom: 40px;
+}
+
+.mb50 {
+	margin-bottom: 50px;
 }
 
 .name {
@@ -23,4 +36,8 @@
 	margin-top: 20px;
 	margin-bottom: 10px;
 	border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.subtitle {
+	font-size: 12;
 }
