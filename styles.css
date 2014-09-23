@@ -1,4 +1,8 @@
 
+li {
+	margin-bottom: 8px;
+}
+
 .container {
 	margin-top: 20px;
 }
@@ -41,3 +45,4 @@
 .subtitle {
 	font-size: 12;
 }
+
