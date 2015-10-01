@@ -1,0 +1,42 @@
+/* Create on 01.01.14 */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.gridjs-sheet {
+    display: none;
+}
+.gridjs-open-sheet {
+    display: block;
+}
+
+.gridjs-table {
+    margin: 0 auto;
+    border: 1px solid;
+    width: 70%;
+    table-layout: fixed;
+}
+.gridjs-table td {
+    height: 30px;
+    font:  bold 140% normal;
+    border: 1px solid;
+    overflow: hidden;
+}
+.gridjs-table .gridjs-inner {
+    height: 100%;
+    width: 100%;
+}
+
+.gridjs-controls {
+    text-align: center;
+    margin: 20px;
+}
+.gridjs-controls button {
+    padding: 5px;
+    margin: 5px;
+}
+.gridjs-active-control {
+    font: bold 110% normal;
+}
