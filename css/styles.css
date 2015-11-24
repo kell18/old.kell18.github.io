@@ -70,3 +70,15 @@ li {
 	font-size: 12;
 }
 
+.highslide img {
+	margin: 5px;
+}
+
+.highslide-full-expand {
+	display: none;
+	visibility: hidden;
+}
+
+li {
+	text-align: left;
+}
