@@ -7,6 +7,10 @@ li {
 	margin-bottom: 8px;
 }
 
+li ul {
+	margin-top: 7px;	
+}
+
 .container {
 	margin-top: 20px;
 }
