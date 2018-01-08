@@ -8,15 +8,15 @@ li {
 }
 
 li ul {
-	margin-top: 7px;	
+	margin-top: 7px;
 }
 
 .container {
 	margin-top: 20px;
 }
 
-.mb20 {
-	margin-bottom: 10px;
+.sub-title {
+	margin-bottom: 7px;
 }
 
 .mb25 {
@@ -48,7 +48,7 @@ li ul {
 
 
 .name {
-	font: bold 18pt sans-serif; 
+	font: bold 18pt sans-serif;
 }
 
 .data-row div:first-child {

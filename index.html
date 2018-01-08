@@ -4,7 +4,7 @@
 	<title>Альберт Бикеев | Резюме</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 
-	<script src="js/jquery-2.1.4.min.js"></script> 
+	<script src="js/jquery-2.1.4.min.js"></script>
 
 	<script type="text/javascript" src="highslide/highslide-with-gallery.js"></script>
 	<script type="text/javascript" src="highslide/highslide.config.js" charset="utf-8"></script>
@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<div class="container mb50"> 
+	<div class="container mb50">
 		<div class="row-fluid data-row mb40">
 			<div class="row-fluid data-row">
 				<div class="span4"><h5></h5></div>
@@ -28,7 +28,7 @@
 
 		<div>
 			<p class="lead">О себе</p>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Я разработчик, пишу на C++, Java/C#, Scala. Интересуюсь алгоритмами, системным программированием, машинным обучением, визуализацией. Люблю саморазвитие и сложные, интересные задачи. Занимаюсь спортом и немного музыкой, люблю путешествовать.</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Я разработчик, в основном пишу на Python и C++, а так же хорошо знаком с C#, Java и Scala. Интересуюсь алгоритмами, системным программированием, машинным обучением, визуализацией. Люблю саморазвитие и интересные задачи. Занимаюсь спортом и немного музыкой, люблю путешествовать.</p>
 		</div>
 
 		<div>
@@ -48,8 +48,9 @@
 					<div class="span4"><h5>Периодически</h5></div>
 				</div>
 				<ul>
-					<li><a href="https://github.com/kell18/Sparkler">Sparkler</a> - графический движок, основанный на методе трассировки лучей (C++).</li>
-					<li><a href="https://github.com/kell18/CAS">CAS</a> - система автоматической модерации контента. Основывается на релевантности, корректности и привлекательности контента, а так же обучается на решениях модератора с помощью алгоритма логистической регрессии. Используется в сообществах <a href="https://vk.com/rbc">РБК</a> для фильтрации комментариев (Scala, Matlab, Elasticsearch).</li>
+					<li><a href="https://github.com/blaginin/metaord">Metaorder CRM</a> - платформа для учёта и обслуживания заказов, товаров и клиентов. Занимался построением API, интеграцией с сервисами обработки заказов, backend-ом. (Python, Django)</li>
+					<li><a href="https://github.com/kell18/CAS">CAS</a> - система автоматической модерации контента. Основывается на релевантности, корректности и привлекательности контента, а так же обучается на решениях модератора с помощью алгоритма логистической регрессии. (Scala, Matlab, Elasticsearch).</li>
+					<li><a href="https://github.com/kell18/Sparkler"><i>Sparkler</i></a> - графический движок, основанный на методе трассировки лучей (C++).</li>
 					<li><a href="https://github.com/kell18/ScrollZ">ScrollZ</a> - игра в жанре side-scroller, написана за две недели практики в универе, в команде из двух человек. Мною была разработана механика игры: скрипты, физика, анимация, звук (C#, Unity3D). <!-- <a href="">(скринкаст механики игры)</a> --></li>
 					<!-- <li><a href="http://online18games.ru/">Языковой тренажёр, прототип (Yandex.SpeechKit)</a></li> -->
 					<li><a href="https://github.com/kell18/MathJson">MathJson</a> - парсер математических выражений в JSON (JavaScript).</li>
@@ -59,12 +60,35 @@
 			</div>
 			<div class="mb25">
 				<div class="row-fluid data-row">
+					<div class="span4"><h5>Data scientist, backend developer (Python)</h5></div>
+					<div class="span4"><h4><a href="http://warefly.com/">Warefly</a></h4></div>
+					<div class="span4"><h5>Декабрь 2016 - Сегодняшний день</h5></div>
+				</div>
+				<span>
+					<div class="sub-title">Разработал систему рекомендаций и генерации плейлистов в области музыки практически в одиночку. Решал разнообразные задачи - начиная от выбора направления разработки и заканчивая тестированием:</div>
+					<ul>
+						<li>Проектирование прототипа и системы с учётом ограниченных ресурсов</li>
+						<li>Подготовка и очистка разнородных данных</li>
+						<li>Поиск и реализация подходящих алгоритмов для задачи рекомендаций и генерации плейлистов. В том числе:<ul>
+							<li>Алгоритмы коллаборативной фильтрации и матричных разложений (SVD, IALS и другие)</li>
+							<li>Алгоритмы предсказания последовательностей элементов (<abbr title="Recursive Neural Networks">RNN</abbr>, n-граммы)</li>
+							<li>Алгоритмы ансамблирования и выбора характеристик (<abbr title="Feature Weighted Linear Stacking">FWLS</abbr>, Random forest) </li>
+							<li>Алгоритмы регрессий, поиска ассоциативных правил</li></ul></li>
+						<li>Исследование и реализация метрик оценки качества рекомендаций</li>
+						<li>Реализация фреймворка для проведения A/B тестов</li>
+						<li>Построение системы рекомендаций, которая успешно используется во множестве проектов компании</li>
+						<li>Масштабирование системы под большие нагрузки</li>
+					</ul>
+				</span>
+			</div>
+			<div class="mb25">
+				<div class="row-fluid data-row">
 					<div class="span4"><h5>Летний стажёр (C++)</h5></div>
 					<div class="span4"><h4>Intel ®</h4></div>
 					<div class="span4"><h5>Июль - Сентябрь 2016</h5></div>
 				</div>
-				<ul>
-					<li><span style="padding-bottom: 7px">За время стажировки поработал над оптимизацией алгоритма поиска ассоциативных правил в проекте <a href="https://software.intel.com/en-us/intel-daal">Intel® Data Analytics Acceleration Library</a>, занимался:</span>
+				<span>
+					<div class="sub-title">За время стажировки поработал над оптимизацией алгоритма поиска ассоциативных правил в проекте <a href="https://software.intel.com/en-us/intel-daal">Intel® Data Analytics Acceleration Library</a>, занимался:</div>
 						<ul>
 							<li>Исследованием возможных оптимизционных техник</li>
 							<li>Анализом и улучшением написанного кода</li>
@@ -73,8 +97,8 @@
 							<li>Интеграцией результатов в библиотеку Intel® DAAL</li>
 						</ul>
 					<span>Помимо этого для нас, студентов летней школы, проводилось множество лекций и тренингов от ведущих специалистов Intel по разным направлениям: soft skills и командная работа, управление проектами, высокопроизводительные вычисления и машинное обучение</span>
-					</li>
-				</ul>
+
+				</span>
 			</div>
 			<div class="mb25">
 				<div class="row-fluid data-row">
@@ -83,7 +107,7 @@
 					<div class="span4"><h5>Октябрь 2015 - Июнь 2016</h5></div>
 				</div>
 				<ul>
-					<li><a href="https://youtu.be/o5xFI1JFj7k">Робототехнический симулятор</a>. В рамках проекта занимался: 
+					<li>Разрабатывал <a href="https://youtu.be/o5xFI1JFj7k">робототехнический симулятор</a>. В рамках проекта занимался:
 						<ul>
 							<li>Проектированием приложения и API, время показывает, что достаточно успешно</li>
 							<li>Cетевым программированием - большой объём данных передаётся по сети с помощью XML протоколов</li>
@@ -125,7 +149,7 @@
 				<div class="span4"><h5>Казанский Федеральный университет (КФУ)</h5></div>
 				<div class="span4"><h5>Сентябрь 2012 - Июнь 2016</h5></div>
 			</div>
-			<ul><li><a href="http://kpfu.ru/eng/itis">Высшая школа информационных технологий и информационных систем (ИТИС)</a>. Средний балл - 83.73. Моими специализациями были: лаборатория визуализации и кафедра интеллектуальных систем поиска.</li></ul>	
+			<ul><li><a href="http://kpfu.ru/eng/itis">Высшая школа информационных технологий и информационных систем (ИТИС)</a>. Средний балл - 83.73. Моими специализациями были: лаборатория визуализации и кафедра интеллектуальных систем поиска.</li></ul>
 			<div class="row-fluid data-row">
 				<div class="span6"><h5>Онлайн курсы</h5></div>
 				<div class="span1"><h4></h4></div>
@@ -145,7 +169,7 @@
 				<div class="span5"><h5>16 - 21 ноября 2015</h5></div>
 			</div>
 			<ul>
-				<li>	
+				<li>
 					<a href="http://delta-course.org/">Международная молодежная школа и конференция</a> - Высокопроизводительные вычисления, оптимизация и приложения, проводимая Нижегородским государственным университетом им. Н.И. Лобачевского совместно с компанией Intel (<i>сертификаты: </i><a href="img/NNGUCertificate.jpeg" target="_blank">#1</a>, <a href="img/IntelCertificate.jpeg" target="_blank">#2</a></i>).
 				</li>
 			</ul>
@@ -166,21 +190,21 @@
 			<ul>
 				<li>Математическая подготовка</li>
 				<li>Aлгоритмы и структуры данных</li>
-				<li>Функциональное программирование</li> 
+				<li>Функциональное программирование</li>
 				<li>Объектно ориентированное программирование</li>
-				<li>Языки программирования: 
+				<li>Языки программирования:
 					<ul>
-						<li>Хорошо знаю: <i>C++, Scala, C#/Java</i></li>
-						<li>Базовый уровень: <i>Matlab, Haskell, JavaScript, PowerShell</i></li>
+						<li>Хорошо знаю: <i>Python, C++, C#/Java</i></li>
+						<li>Базовый уровень: <i>Scala, JavaScript, Matlab, Haskell, PowerShell</i></li>
 					</ul>
 				</li>
-				<li>Фреймворки и библиотеки: <i>Akka, Spray, Cats, TBB, OpenMP, OpenGL, .NET MVC 4</i></li>
+				<li>Фреймворки и библиотеки: <i>Flask, Django, Graphlab, Numpy/Pandas/Scikit-learn, Akka, Spray, Cats, TBB, OpenMP, OpenGL, .NET MVC 4</i></li>
 				<li>Параллельные и распределённые вычисления: <i>Потоки, Futures, Actors, MPI, CUDA</i></a></li>
 				<li>Базы данных: <i>Postgres, MongoDB</i></li>
 				<li>Полнотекстовый поиск: <i>Elasticsearch</i></li>
 				<li>Web технологии: <i>JavaScript, ASP.NET MVC 4, PHP, CSS, HTML</i></li>
-				<li>Системы контроля версий: <i>Git, GitHub, SVN, TFS</i></li>
-				<li>Платформы: <i>Windows, Linux/Ubuntu, Visual Studio, Unity3D, Intellij IDEA, Eclipse, CI (Jenkins)</i></li>
+				<li>Системы контроля версий: <i>Git, SVN, TFS</i></li>
+				<li>Платформы: <i>Unix, AWS, Windows, Visual Studio, Unity3D, Intellij IDEA, Eclipse, CI (Jenkins)</i></li>
 			</ul>
 		</div>
 
